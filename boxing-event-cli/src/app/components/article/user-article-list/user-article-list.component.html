@@ -1,0 +1,69 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Mes Articles</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Mes Articles</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-pagecontent">
+
+  <div class="container">
+    <div class="row">
+      <div class="kode-blog-list kode-grid-blog">
+        <ul class="row">
+
+          <li class="col-md-6" *ngFor="let article of articles">
+            <div class="kode-time-zoon">
+              <time datetime="2008-02-14 20:00">07 <span>may</span></time>
+              <h5><a href="#">{{ article.title }}</a></h5>
+            </div>
+            <figure><a href="#"><img src="assets/images/imgs/{{ article.image }}" alt=""></a></figure>
+            <div class="kode-blog-info">
+              <ul class="kode-blog-options">
+                <li><a href="#"><i class="fa fa-user"></i> {{ article.author.firstName }} {{ article.author.lastName }}</a></li>
+                <li><a href="#"><i class="fa fa-comment"></i> 3 Comments</a></li>
+                <li><a href="#"><i class="fa fa-share-alt"></i> 12 Share</a></li>
+              </ul>
+              <p>{{ article.summary }}</p>
+              <a routerLink="/article/{{ article.id }}" class="kode-modrenbtn thbg-colorhover">Consulter</a>
+              <div class="clearfix"></div>
+              <ul class="kode-team-network">
+                <li><a class="fa fa-facebook" href="#"></a></li>
+                <li><a class="fa fa-twitter" href="#"></a></li>
+                <li><a class="fa fa-linkedin" href="#"></a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+        <!--// Pagination //-->
+        <div class="pagination">
+          <small>
+            <a href="javascript:void(0)" (click)="onPaginate(0)"><i class="fa fa-angle-double-left"></i></a>
+          </small>
+          <small *ngFor="let page of totalPages; let i = index;">
+            <span *ngIf="i === (currentPage)">{{ i+1 }}</span>
+            <a *ngIf="i !== (currentPage)" href="javascript:void(0)" (click)="onPaginate(i)">{{ i+1 }}</a>
+          </small>
+          <small>
+            <a href="javascript:void(0)" (click)="onPaginate(totalPages.length-1)"><i class="fa fa-angle-double-right"></i></a>
+          </small>
+        </div>
+        <!--// Pagination //-->
+
+      </div>
+    </div>
+  </div>
+
+</div>

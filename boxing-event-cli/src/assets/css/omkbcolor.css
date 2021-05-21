@@ -1,0 +1,70 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+.kode-topbar, .kode-subheader, .kode-table caption, .thbg-color, .kode-bottom-footer,
+.heading-12 span.left, .heading-12 span.right, .header-8 {
+  background-color: #224610;
+}
+
+.kode-team-list figure:hover figcaption h2 a {
+  background-color: #224610;
+
+  border-color: #7c7a7f;
+}
+
+.kode-topbar:before, .square-icon a, .thbg-colortwo {
+  background-color: #317f12;
+  /*background-color: #5d5a7f;*/
+
+}
+
+.kode-topbar:after, .subheader-height:after {
+  border-bottom-color: #317f12;
+}
+
+.kode-loginform p input[type="submit"] {
+  border-color: #317f12;
+}
+
+.kode-simple-form ul li input[type="submit"] {
+  /*border-color: #1A1342 !important;*/
+  border-color: #224610 !important;
+
+  box-shadow: 0px 0px 0px 1px #cbbec2 inset;
+}
+
+.kode-table {
+  /*border-color: #1A1342;*/
+}
+
+.kode-bg-color {
+  /*background-color: #151342;*/
+}
+
+.subheader-height:before {
+  background: #317f12;
+}
+
+#kode-topbtn:before, #kode-topbtn:after {
+  border-bottom-color: #317f12;
+}
+
+.kode-team-list figure:hover figcaption a:hover, .kode-recent-blog > ul > li:hover h6 a, .kode-modren-btn:hover {
+  color: #224610;
+}
+
+.kode-modren-btn {
+  border-color: #7c7a7f;
+  color: #ffffff;
+}
+
+.kode-section-title h2 {
+  color: #252525;
+  border-color: #252525;
+}
+
+.invalid-feedback {
+  font-size: 80% !important;
+  color: #dc3545 !important;
+}
+
+

@@ -1,0 +1,206 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Mon club</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Club</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-content">
+
+  <!--// Page Content //-->
+  <section class="kode-pagesection">
+    <div class="container">
+      <div class="row">
+
+        <div class="kode-pagecontent col-md-9">
+
+          <div class="row">
+            <div class="col-md-5"><a href="#" class="kode-player-thumb"><img
+              src="assets/extra-images/player-detail-1.jpg" alt=""></a></div>
+            <div class="col-md-7">
+
+
+              <table class="kode-table">
+                <caption>Profile</caption>
+                <tbody>
+                <tr>
+                  <td>Nom du club:</td>
+                  <td>{{club.name}}</td>
+                </tr>
+                <tr>
+                  <td>Email:</td>
+                  <td>{{club.email}}</td>
+                </tr>
+                <tr>
+                  <td>Adresse:</td>
+                  <td>{{club.address}}</td>
+                </tr>
+                <tr>
+                  <td>Code postal:</td>
+                  <td>{{club.zipCode}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!--Team Members -->
+          <div class="kode-section-title"><h2>Membres</h2></div>
+          <div class="kode-gallery">
+            <ul class="row">
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-1.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-2.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-3.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-2.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-1.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-2.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-2.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+              <li class="col-md-3">
+                <figure><a href="#"><img src="assets/extra-images/player-2.jpg" alt=""></a>
+                  <figcaption><a href="#" class="kode-gallery-hover thbg-color"><i class="fa fa-plus"></i></a>
+                  </figcaption>
+                </figure>
+
+              </li>
+            </ul>
+          </div>
+
+          <div id="koderespond">
+            <div class="kode-section-title"><h2>Boxeurs</h2></div>
+            <div class="kode-team-list">
+              <ul class="row">
+                <li class="col-md-4 col-sm-6" *ngFor="let boxer of getBoxers()">
+                  <figure><a href="#" class="kode-team-thumb"><img src="assets/extra-images/player-1.jpg" alt=""></a>
+                    <figcaption>
+                      <ul class="kode-team-network">
+                        <li><a href="#" class="fa fa-facebook"></a></li>
+                        <li><a href="#" class="fa fa-twitter"></a></li>
+                        <li><a href="#" class="fa fa-linkedin"></a></li>
+                      </ul>
+                      <div class="clearfix"></div>
+                      <h2><a routerLink="/boxer/{{boxer.id}}">{{boxer.firstName}} {{boxer.lastName}}</a></h2>
+                      <a routerLink="/boxer/{{boxer.id}}" class="kode-modren-btn thbg-colortwo">Informations du boxeur</a>
+                    </figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <aside class="kode-pagesidebar col-md-3">
+
+          <div class="widget kode-recent-blog">
+            <div class="kode-widget-title"><h2>Paramètres</h2></div>
+            <ul>
+              <li>
+                <figure>
+                  <span class="kode-recent-thumb">
+                    <span class="kd-icon square-icon">
+                     <a routerLink="/manage-club"><i class="fa fa-edit"></i></a>
+                    </span>
+                  </span>
+                  <figcaption>
+                    <h6><a routerLink="/manage-club">Modifier le club</a></h6>
+                    <ul>
+                      <li>{{club.name}}</li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <span class="kode-recent-thumb">
+                    <span class="kd-icon square-icon">
+                     <a href="#"><i class="fa fa-plus-circle"></i></a>
+                    </span>
+                  </span>
+                  <figcaption>
+                    <h6><a href="#">Ajouter un membre</a></h6>
+                    <ul>
+                      <li>{{club.name}}</li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <span class="kode-recent-thumb">
+                    <span class="kd-icon square-icon">
+                     <a routerLink="/add-boxer"><i class="fa fa-plus-circle"></i></a>
+                    </span>
+                  </span>
+                  <figcaption>
+                    <h6><a routerLink="/add-boxer">Ajouter un boxeur</a></h6>
+                    <ul>
+                      <li>{{club.name}}</li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+  <!--// Page Content //-->
+
+</div>
+<!--// Main Content //-->

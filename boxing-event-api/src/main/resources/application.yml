@@ -1,0 +1,50 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/boxing
+    username: root
+    password: root
+  jpa:
+    show-sql: true
+    #      generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      #  ddl-auto: validate  # Hibernate ddl auto (create, create-drop, validate, update)
+      #naming:
+      # implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+      # physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        jdbc.lob.non_contextual_creation: true
+    open-in-view: false
+
+
+  liquibase:
+    enabled: false
+
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+
+server:
+  servlet:
+    context-path: /api
+  port: 8082
+
+jwt:
+  authUri: /auth/**
+  registerUri: /users/**
+  header: Authorization
+  prefix: Bearer
+
+  # 12h in millisecond
+  expiration: 43200000
+  secret: 10C8D2C3F952D6EB3F41461C01073E1A4C9683638FA019B06B07D1878C7BF687F8975B28AA3FB3D33F76983A0E12EB4CD0E19FDC6CB71F053CE00B953BE9E690
+
+storage:
+  uploadDir: ./uploads
+
+
+
+

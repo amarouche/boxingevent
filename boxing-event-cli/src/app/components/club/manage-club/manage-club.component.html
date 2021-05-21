@@ -1,0 +1,138 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Gestion de mon club</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Club</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<div class="kode-content">
+
+  <!--// Page Content //-->
+
+  <section class="kode-pagesection kode-padding-bottom-40">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="heading heading-12 margin-top10-bottom30-flat">
+            <p>Informations du club</p>
+            <h2><span class="left"></span>{{club.name}}<span class="right"></span></h2>
+          </div>
+          <div class="kode-simple-form">
+            <form [formGroup]="clubForm" (ngSubmit)="onSubmit()" class="kode-loginform" ngNativeValidate>
+              <div *ngIf="errorMessage">
+                <div class="alert alert-danger" role="alert">
+                  {{errorMessage}}
+                </div>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>
+                    <p><span>Nom du club: </span></p>
+                    <input formControlName="name" type="text" placeholder="Nom:">
+                    <span *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                    <span *ngIf="f.name.errors.required">Nom est obligatoire</span>
+                  </span>
+                  </li>
+                  <li>
+                    <p><span>Email: </span></p>
+                    <input formControlName="email" type="text" placeholder="Email:">
+                    <span *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <span *ngIf="f.email.errors.required">Email est obligatoire</span>
+                      <span *ngIf="f.email.errors.email">Ce n'est pas un email valide</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul>
+                  <li>
+                    <p><span>Adresse: </span></p>
+                    <input formControlName="address" type="text" placeholder="Adresse:">
+                    <span *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                      <span *ngIf="f.address.errors.required">Adresse est obligatoire</span>
+                    </span>
+                  </li>
+                  <li>
+                    <p><span>Code postal: </span></p>
+                    <input formControlName="zipCode" type="text" placeholder="Code postal:">
+                    <span *ngIf="submitted && f.zipCode.errors" class="invalid-feedback">
+                      <span *ngIf="f.zipCode.errors.required">Code postal est obligatoire</span>
+                    </span>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-12">
+                <ul>
+                  <li><input type="submit" value="Sauvegarder" class="thbg-color"></li>
+                </ul>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- add new boxer -->
+  <section>
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="heading heading-12 margin-top10-bottom30-flat">
+          <h2>
+            <span class="left"></span>
+            Ajouter un boxeur
+            <span class="right"></span>
+          </h2>
+          <div><a routerLink="/add-boxer" class="kode-modren-btn thbg-colortwo">Commencer</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kode-pagesection margin-bottom-40">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-md-12">
+          <div class="heading heading-12 margin-top10-bottom30-flat">
+            <p>{{club.name}}</p>
+            <h2><span class="left"></span>Nos boxeurs<span class="right"></span></h2>
+          </div>
+          <div class="kode-team-list">
+            <ul class="row">
+              <li class="col-md-4 col-sm-6" *ngFor="let boxer of getBoxers()">
+                <figure><a href="#" class="kode-team-thumb"><img src="assets/extra-images/player-1.jpg" alt=""></a>
+                  <figcaption>
+                    <ul class="kode-team-network">
+                      <li><a href="#" class="fa fa-facebook"></a></li>
+                      <li><a href="#" class="fa fa-twitter"></a></li>
+                      <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <h2><a href="#">{{boxer.firstName}} {{boxer.lastName}}</a></h2>
+                    <a href="#" class="kode-modren-btn thbg-colortwo">Informations du boxeur</a>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--// Page Content //-->
+
+</div>

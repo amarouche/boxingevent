@@ -1,0 +1,46 @@
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header thbg-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Connexion</h4>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="kode-loginform" ngNativeValidate>
+          <div toastContainer></div>
+          <p>
+            <span>Email</span>
+            <input formControlName="email" type="text" placeholder="Email:" name="email">
+            <span *ngIf="submitted && f.email.errors" class="invalid-feedback">
+              <div *ngIf="f.email.errors.required">Email est obligatoire</div>
+              <div *ngIf="f.email.errors.email">Ce n'est pas un email valide</div>
+            </span>
+          </p>
+          <p>
+            <span>Mot de passe</span>
+            <input formControlName="password" type="password" placeholder="mot de passe:" name="password">
+            <span *ngIf="submitted && f.password.errors" class="invalid-feedback">
+              <div *ngIf="f.password.errors.required">Mot de passe est obligatoire</div>
+              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            </span>
+          </p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Se souvenir de moi</span>
+            </label>
+          </p>
+          <p class="kode-submit">
+            <a href="#">Mot de passe oublié ?</a>
+            <input class="thbg-colortwo" type="submit" value="Se connecter">
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

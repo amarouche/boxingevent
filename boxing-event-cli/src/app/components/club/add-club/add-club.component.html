@@ -1,0 +1,50 @@
+<div class="modal fade" id="addClubModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header thbg-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Ajouter un club</h4>
+      </div>
+      <div class="modal-body">
+
+        <form [formGroup]="registerClubForm" (ngSubmit)="onClubSubmit()" class="kode-loginform" ngNativeValidate>
+          <div toastContainer></div>
+          <p>
+            <span>Nom</span>
+            <input formControlName="name" type="text" placeholder="Nom">
+            <span *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">Nom est obligatoire</div>
+            </span>
+          </p>
+          <p>
+            <span>Email</span>
+            <input formControlName="email" name="email" type="text" placeholder="Email">
+            <span *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <span *ngIf="f.email.errors.required">Email est obligatoire</span>
+                  <span *ngIf="f.email.errors.email">Email invalide</span>
+                </span>
+          </p>
+          <p>
+            <span>Adresse</span>
+            <input formControlName="address" type="text" placeholder="Adresse">
+            <span *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                  <span *ngIf="f.address.errors.required">Adresse est obligatoire</span>
+                </span>
+          </p>
+          <p>
+            <span>Code postal</span>
+            <input formControlName="zipCode" type="text" placeholder="Code postal">
+            <span *ngIf="submitted && f.zipCode.errors" class="invalid-feedback">
+                  <span *ngIf="f.zipCode.errors.required">Code postal est obligatoire</span>
+                  <span *ngIf="f.zipCode.errors.minLength">Code postal invalide</span>
+                </span>
+          </p>
+          <p class="kode-submit">
+            <input class="thbg-colortwo" type="submit" value="Ajouter">
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

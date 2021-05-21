@@ -1,0 +1,121 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Liste des Utilisteurs</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Liste des Utilisteurs
+          </a></li>
+<!--          <li><a href="#">Articles</a></li>-->
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div class="kode-content">-->
+  <section class="content" *ngIf="dataSource">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+<!--          <div class="box-header with-border">-->
+<!--            <h3 class="box-title">Liste des Utilisteurs</h3>-->
+<!--          </div>-->
+          <!-- /.box-header -->
+          <div class="box-body">
+            <!-- <div style="margin-bottom: 20px">
+                <div>
+                    <mat-form-field fxFlex="40%">
+                        <input matInput type="text" (keyup)="doFilter($event.target.value)" [(ngModel)]="filter.search" placeholder="Chercher une réservation">
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field>
+                        <mat-label>Thème</mat-label>
+                        <mat-select (selectionChange)="filterByGame($event.value)" [(ngModel)]="filter.type">
+                            <mat-option *ngFor="let game of games" [value]="game.name">
+                                {{game.name}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button mat-raised-button (click)="clearFilter()">Réinitialiser les filtres</button>
+                </div>
+            </div> -->
+
+            <table mat-table  [dataSource]="dataSource" matSort>
+              <ng-container matColumnDef="firstName">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> First name</th>
+
+                <!--                            <td mat-cell *matCellDef="let element"> <p>{{ element.username }}</p> </td>-->
+                <td mat-cell *matCellDef="let element">  {{ element.firstName }}
+                  <!--<a [hidden]="currentUserId !=  element.id" routerLink="/users/{{element.id}}">{{ element.username }}</a>-->
+                </td>
+              </ng-container>
+              <ng-container matColumnDef="lastName">-->
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Last name</th>
+                <td mat-cell *matCellDef="let element"> {{ element.lastName }} </td>
+              </ng-container>
+              <ng-container matColumnDef="email">-->
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> email</th>
+                <td mat-cell *matCellDef="let element"> {{ element.email }} </td>
+              </ng-container>
+              <ng-container matColumnDef="type">-->
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Type</th>
+                <td mat-cell *matCellDef="let element"> {{ element.type }} </td>
+              </ng-container>
+              <ng-container matColumnDef="weight">-->
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> weight</th>
+                <td mat-cell *matCellDef="let element"> {{ element.weight }} </td>
+              </ng-container>
+              <ng-container matColumnDef="height">-->
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> height</th>
+                <td mat-cell *matCellDef="let element"> {{ element.height }} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Actions</th>
+                <td mat-cell  *matCellDef="let element">
+                  <button mat-icon-button [matMenuTriggerFor]="menu"
+                          [matMenuTriggerData]="{id: element.id}"
+                          aria-label="Actions">
+                    <i class="fa fa-cog"></i>
+                    <!--                                    <mat-icon>more_vert</mat-icon>-->
+                  </button>
+                </td>
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+            <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25, 100]"
+                           (page)="pageEvent = $event"></mat-paginator>
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+      </div>
+    </div>
+  </section>
+<!--</div>-->
+
+<mat-menu #menu="matMenu">
+    <ng-template matMenuContent let-id="id" let-memberships="memberships" let-license="license">
+<!--        <a mat-menu-item routerLink="/users/{{id}}">-->
+<!--            <i class="cui-bookmark"></i>-->
+<!--            &lt;!&ndash;        <mat-icon>picture_as_pdf</mat-icon>&ndash;&gt;-->
+<!--            <span> Detail</span>-->
+<!--        </a>-->
+        <a mat-menu-item routerLink="/users/edit/{{id}}">
+            <i class="cui-pencil"></i>
+            <span> Modifier</span>
+        </a>
+        <button mat-menu-item (click)="delete(id)">
+<!--            <mat-icon>picture_as_pdf</mat-icon>-->
+            <i class="cui-trash"></i>
+            <span> Delete</span>
+        </button>
+
+    </ng-template>
+</mat-menu>

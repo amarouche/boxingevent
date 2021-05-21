@@ -1,0 +1,27 @@
+<div class="col-6" *ngIf="user">
+    <div class="card">
+        <div class="card-header">
+            <strong>User informations</strong>
+        </div>
+        <div class="card-body">
+            <!--            <div style="width: 0%;">-->
+            <div>
+                <label><strong>Username: </strong> {{user.username}}</label>
+            </div>
+            <div>
+                <label><strong>Role: </strong>    {{user.role.name}}</label>
+            </div>
+            <div>
+                <label><strong>Creation date: </strong>    {{user.creationDate}}</label>
+            </div>
+            <div>
+                <label><strong>Updated date: </strong>    {{user.updatedDate}}</label>
+            </div>
+            <button routerLink="/address/add/{{id}}" class="btn btn-block btn-info">Add Address</button>
+            <br>
+            <button routerLink="/users/edit/{{id}}" class="btn btn-block btn-warning">Edit</button>
+            <button (click)="delete()" class="btn btn-block btn-danger">Delete</button>
+        </div>
+    </div>
+</div>
+<app-list-address></app-list-address>

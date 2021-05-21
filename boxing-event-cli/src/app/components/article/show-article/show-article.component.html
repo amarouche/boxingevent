@@ -1,0 +1,188 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Article</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Articles</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-content" *ngIf="article">
+
+  <!--// Page Content //-->
+  <section class="kode-pagesection">
+    <div class="container">
+      <div class="row">
+
+        <div class="kode-pagecontent col-md-9">
+
+          <div class="kode-blog-list kode-fullwidth-blog">
+            <ul class="row">
+              <li class="col-md-12">
+                <div class="kode-time-zoon">
+                  <time datetime="2008-02-14 20:00">07 <span>may</span></time>
+                  <h5>{{ article.title }}</h5>
+                </div>
+                <figure><img src="assets/images/imgs/{{ article.image }}" alt=""></figure>
+                <div class="kode-blog-info">
+                  <ul class="kode-blog-options">
+                    <li><a href="#"><i class="fa fa-user"></i> {{ article.author.firstName }} {{ article.author.lastName }}</a></li>
+                    <li><a href="#"><i class="fa fa-comment"></i> 3 Commentaires</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="kode-editor">
+            <p [innerHTML]="article.content"></p>
+          </div>
+
+
+          <div class="kode-postsection">
+            <h6 class="kode-prev"><a href="#" class="thcolorhover"><i class="fa fa-long-arrow-left"></i> Article
+              précédant</a></h6>
+            <h6 class="kode-next"><a href="#" class="thcolorhover">Article suivant <i
+              class="fa fa-long-arrow-right"></i></a></h6>
+          </div>
+
+          <div id="kodecomments">
+            <div class="kode-section-title"><h2>Commentaires</h2></div>
+            <ul>
+              <li>
+                <div class="thumblist">
+                  <ul>
+                    <li>
+                      <figure><a href="#"><img src="assets/extra-images/comment1.jpg" alt=""></a></figure>
+                      <div class="text">
+                        <h6><a href="#">jack sperrow</a></h6>
+                        <time datetime="2008-02-14 20:00">| 10 March</time>
+                        <a href="#" class="replay-btn thcolor">Répondre</a>
+                        <p>Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                          wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                          aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
+                          velit esse molestie consequat.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <ul class="children">
+                  <li>
+                    <figure><a href="#"><img src="assets/extra-images/comment1.jpg" alt=""></a></figure>
+                    <div class="text">
+                      <h6><a href="#">jack sperrow</a></h6>
+                      <time datetime="2008-02-14 20:00">| 10 March</time>
+                      <p>Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                        wisi enim ad minim veniam, quis nostrud exerci tation.</p>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <div class="thumblist">
+                  <ul>
+                    <li>
+                      <figure><a href="#"><img src="assets/extra-images/comment1.jpg" alt=""></a></figure>
+                      <div class="text">
+                        <h6><a href="#">jack sperrow</a></h6>
+                        <time datetime="2008-02-14 20:00">| 10 March</time>
+                        <a href="#" class="replay-btn thcolor">Répondre</a>
+                        <p>Wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                          wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut
+                          aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate
+                          velit esse molestie consequat.</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div id="koderespond">
+            <div class="kode-section-title"><h2>Ajouter un commentaire</h2></div>
+            <form>
+              <p class="kd-textarea"><textarea placeholder="Ajouter votre commentaire"></textarea></p>
+              <p class="kd-button"><input type="button" class="thbg-color" value="Poster un commentaire"></p>
+            </form>
+          </div>
+
+        </div>
+
+        <aside class="kode-pagesidebar col-md-3">
+
+
+          <div class="widget kode-recent-blog">
+            <div class="kode-widget-title"><h2>Recent Blog Post</h2></div>
+            <ul>
+              <li>
+                <figure><a class="kode-recent-thumb" href="#"><img src="assets/extra-images/recentblog-widget1.jpg"
+                                                                   alt=""></a>
+                  <figcaption>
+                    <h6><a href="#">Never Give Up On Yourself</a></h6>
+                    <ul>
+                      <li>05 May 2015</li>
+                      <li>by <a href="#">John</a></li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure><a class="kode-recent-thumb" href="#"><img src="assets/extra-images/recentblog-widget2.jpg"
+                                                                   alt=""></a>
+                  <figcaption>
+                    <h6><a href="#">Hopefull Players Always</a></h6>
+                    <ul>
+                      <li>05 May 2015</li>
+                      <li>by <a href="#">John</a></li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure><a class="kode-recent-thumb" href="#"><img src="assets/extra-images/recentblog-widget3.jpg"
+                                                                   alt=""></a>
+                  <figcaption>
+                    <h6><a href="#">Standalone Quality Shoes</a></h6>
+                    <ul>
+                      <li>05 May 2015</li>
+                      <li>by <a href="#">John</a></li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+              <li>
+                <figure>
+                  <span class="kode-recent-thumb">
+                    <span class="kd-icon square-icon">
+                     <a routerLink="/edit-article/{{ article.id }}"><i class="fa fa-edit"></i></a>
+                    </span>
+                  </span>
+                  <figcaption>
+                    <h6><a routerLink="/edit-article/{{ article.id }}">Modifier l'article</a></h6>
+                    <ul>
+                      <li>{{article.title}}</li>
+                    </ul>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </section>
+  <!--// Page Content //-->
+
+</div>
+<!--// Main Content //-->

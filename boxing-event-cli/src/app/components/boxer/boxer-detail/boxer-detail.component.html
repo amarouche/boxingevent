@@ -1,0 +1,68 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Mon club</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Club</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-content" *ngIf="boxer">
+
+  <!--// Page Content //-->
+
+  <section class="kode-pagesection">
+    <div class="container">
+      <div class="row">
+
+        <div class="kode-pagecontent">
+          <div class="row">
+            <div class="col-md-5"><a href="#" class="kode-player-thumb"><img
+              src="assets/extra-images/player-detail-1.jpg" alt=""></a></div>
+            <div class="col-md-7">
+              <table class="kode-table">
+                <caption>Profile</caption>
+                <tbody>
+                <tr>
+                  <td>Nom:</td>
+                  <td>{{boxer.firstName}}</td>
+                </tr>
+                <tr>
+                  <td>Prenom:</td>
+                  <td>{{boxer.lastName}}</td>
+                </tr>
+                <tr>
+                  <td>Email:</td>
+                  <td>{{boxer.email}}</td>
+                </tr>
+                <tr>
+                  <td>Poids:</td>
+                  <td>{{boxer.detail?.weight}}</td>
+                </tr>
+                <tr>
+                  <td>Taille:</td>
+                  <td>{{boxer.detail?.height}}</td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!--// Page Content //-->
+
+</div>
+<!--// Main Content //-->

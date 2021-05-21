@@ -1,0 +1,61 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Ajouter un article</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Article</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-content">
+
+  <!--// Page Content //-->
+  <section class="kode-pagesection">
+    <div class="container">
+      <div class="row">
+
+        <div class="kode-pagecontent col-md-8 col-md-offset-2">
+
+          <div class="kode-blog-list kode-fullwidth-blog">
+            <ul>
+              <li>
+                <div class="kode-time-zoon">
+                  <time datetime="2008-02-14 20:00">07 <span>may</span></time>
+                  <h5>{{ article.title }}</h5>
+                </div>
+                <figure><img src="assets/images/imgs/{{ article.image }}" alt=""></figure>
+                <div class="kode-blog-info">
+                  <ul class="kode-blog-options">
+                    <li><a href="#"><i class="fa fa-user"></i> {{ article.author.firstName }} {{ article.author.lastName }}</a></li>
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+          <div class="kode-editor">
+            <p [innerHTML]="article.content"></p>
+          </div>
+          <form (ngSubmit)="onSubmit(article.id)">
+
+            <p class="kode-submit">
+              <input class="input-submit thbg-colortwo" type="submit" value="Publier">
+              <a routerLink="/edit-article/{{ article.id }}" class="edit-submit thbg-colortwo" type="submit">Modifier</a>
+            </p>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+</div>

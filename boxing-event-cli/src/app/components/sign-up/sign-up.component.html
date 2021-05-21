@@ -1,0 +1,93 @@
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-sign-up">
+    <div class="modal-content">
+      <div class="modal-header thbg-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Inscription</h4>
+      </div>
+      <div class="modal-body">
+
+        <!-- <div class="tab-content"> -->
+        <div role="tabpanel" class="tab-pane active" id="membre">
+          <div *ngIf="errorMessage">
+            <div class="alert alert-danger" role="alert">
+              {{errorMessage}}
+            </div>
+          </div>
+          <form [formGroup]="registerMemberForm" (ngSubmit)="onMemberSubmit()" class="kode-loginform" ngNativeValidate>
+            <div class="col-md-6">
+              <p>
+                <span>Type de profil: </span>
+                <select formControlName="type">
+                  <option *ngFor="let type of userTypes" value="{{type.id}}">
+                    {{type.name}}
+                  </option>
+                </select>
+                <span *ngIf="submitted && f.type.errors" class="invalid-feedback">
+               <div *ngIf="f.type.errors.required">Type est obligatoire</div>
+               </span>
+              </p>
+              <p>
+                <span>Nom</span>
+                <input formControlName="lastName" type="text" placeholder="Nom">
+                <span *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+               <div *ngIf="f.lastName.errors.required">Nom est obligatoire</div>
+             </span>
+              </p>
+              <p>
+                <span>Prenom</span>
+                <input formControlName="firstName" type="text" placeholder="Nom">
+                <span *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+               <div *ngIf="f.firstName.errors.required">Prenom est obligatoire</div>
+             </span>
+              </p>
+              <p>
+                <span>Email</span>
+                <input formControlName="email" name="email" type="text" placeholder="Email">
+                <span *ngIf="submitted && f.email.errors" class="invalid-feedback">
+               <div *ngIf="f.email.errors.required">Email est obligatoire</div>
+                 <div *ngIf="f.email.errors.email">Ce n'est pas un email valide</div>
+               </span>
+              </p>
+            </div>
+
+            <div class="col-md-6">
+
+              <p *ngIf="userType.value === '2'">
+                <span>Poids</span>
+                <input formControlName="weight" type="number" placeholder="Poids">
+              </p>
+              <p *ngIf="userType.value === '2'">
+                <span>Taille</span>
+                <input formControlName="height" type="number" placeholder="Taille">
+              </p>
+              <p>
+                <span>Mot de passe</span>
+                <input formControlName="password" type="password" placeholder="mot de passe:" name="password"
+                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <span *ngIf="submitted && f.password.errors" class="invalid-feedback">
+               <div *ngIf="f.password.errors.required">Mot de passe est obligatoire</div>
+               <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+             </span>
+              </p>
+              <p>
+                <span>Confirmation de mot de passe</span>
+                <input formControlName="confirmPassword" type="password" placeholder="Confirmer votre mot de passe:"
+                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                <span *ngIf="submitted && f.confirmPassword.errors" class="invalid-feedback">
+               <div *ngIf="f.confirmPassword.errors.required">Mot de passe est obligatoire</div>
+               <div *ngIf="f.confirmPassword.errors.mustMatch">Mot de passe ne correspond pas</div>
+             </span>
+              </p>
+            </div>
+
+            <p class="kode-submit">
+              <input class="thbg-colortwo" type="submit" value="S'inscrire">
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

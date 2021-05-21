@@ -1,0 +1,21 @@
+<!--// Main Banner //-->
+<div id="mainbanner">
+  <div class="flexslider">
+    <ul class="slides">
+      <li *ngFor="let article of articles">
+        <img src="assets/images/imgs/{{ article.image }}" alt=""/>
+        <div class="container">
+          <div class="kode-caption">
+            <h2>{{ article.title }}</h2>
+            <div class="clearfix"></div>
+            <p>{{ article.summary }}</p>
+            <div class="clearfix"></div>
+            <a class="kode-modren-btn thbg-colortwo" routerLink="/article/{{ article.id }}">Lire l'article</a>
+          </div>
+        </div>
+      </li>
+
+    </ul>
+  </div>
+</div>
+<!--// Main Banner //-->

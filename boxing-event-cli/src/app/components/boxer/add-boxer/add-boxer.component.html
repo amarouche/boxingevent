@@ -1,0 +1,151 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Gestion de mon club</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Club</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-content">
+
+  <!--// Page Content //-->
+  <section class="kode-pagesection">
+    <div class="container">
+      <div class="row">
+        <!--// boxers list //-->
+        <div id="koderespond">
+          <div class="kode-section-title"><h2>Boxeurs indépendants</h2></div>
+          <div class="kode-team-list">
+            <ul class="row">
+              <li class="col-md-4 col-sm-6" *ngFor="let boxer of boxers">
+                <figure><a href="#" class="kode-team-thumb"><img src="assets/extra-images/player-1.jpg" alt=""></a>
+                  <figcaption>
+                    <ul class="kode-team-network">
+                      <li><a href="#" class="fa fa-facebook"></a></li>
+                      <li><a href="#" class="fa fa-twitter"></a></li>
+                      <li><a href="#" class="fa fa-linkedin"></a></li>
+                    </ul>
+                    <div class="clearfix"></div>
+                    <h2><a href="#">{{boxer.firstName}} {{boxer.lastName}}</a></h2>
+                    <a href="#" class="kode-modren-btn thbg-colortwo" data-toggle="modal"
+                       data-target="#addBoxerClubModal" (click)="onSelectBoxer(boxer)">Ajouter le boxeur</a>
+                  </figcaption>
+                </figure>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- add new boxer -->
+  <section>
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="heading heading-12 margin-top10-bottom30-flat">
+          <h2>
+            <span class="left"></span>
+            Créer un nouveau compte pour un boxeur
+            <span class="right"></span>
+          </h2>
+          <div><a href="#" class="kode-modren-btn thbg-colortwo" data-toggle="modal" data-target="#addClubMemberModal">Créer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="modal fade" id="addClubMemberModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-sign-up">
+      <div class="modal-content">
+        <div class="modal-header thbg-color">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">Ajouter un nouveau boxeur</h4>
+        </div>
+        <div class="modal-body">
+
+          <!-- <div class="tab-content"> -->
+          <div role="tabpanel" class="tab-pane active">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="kode-loginform" ngNativeValidate>
+              <div class="col-md-6">
+                <p>
+                  <span>Nom</span>
+                  <input formControlName="lastName" type="text" placeholder="Nom">
+                  <span *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                   <div *ngIf="f.lastName.errors.required">Nom est obligatoire</div>
+                 </span>
+                </p>
+                <p>
+                  <span>Prenom</span>
+                  <input formControlName="firstName" type="text" placeholder="Nom">
+                  <span *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+               <div *ngIf="f.firstName.errors.required">Prenom est obligatoire</div>
+             </span>
+                </p>
+                <p>
+                  <span>Email</span>
+                  <input formControlName="email" name="email" type="text" placeholder="Email">
+                  <span *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                 <div *ngIf="f.email.errors.required">Email est obligatoire</div>
+                   <div *ngIf="f.email.errors.email">Ce n'est pas un email valide</div>
+                 </span>
+                </p>
+              </div>
+
+              <div class="col-md-6">
+                <p>
+                  <span>Poids</span>
+                  <input formControlName="weight" type="text" placeholder="Poids">
+                </p>
+                <p>
+                  <span>Taille</span>
+                  <input formControlName="height" type="text" placeholder="Taille">
+                </p>
+              </div>
+
+              <p class="kode-submit">
+                <input class="thbg-colortwo" type="submit" value="Ajouter">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="addBoxerClubModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header thbg-color">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Ajouter un boxeur</h4>
+      </div>
+      <div class="modal-body">
+
+        <div role="tabpanel" class="tab-pane">
+          <form class="kode-loginform" ngNativeValidate>
+            <p>Êtes-vous sûr de vouloir associer ce boxeur à votre club ?</p>
+            <p>
+              <input class="thbg-colortwo" type="submit" value="Confirmer" (click)="onAddBoxer()">
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

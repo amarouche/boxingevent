@@ -1,0 +1,64 @@
+<div class="kode-subheader subheader-height">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1>Ajouter un article</h1>
+      </div>
+      <div class="col-md-6">
+        <ul class="kode-breadcrumb">
+          <li><a href="#">Accueil</a></li>
+          <li><a href="#">Article</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!--// Sub Header //-->
+
+<!--// Main Content //-->
+<div class="kode-content">
+
+  <!--// Page Content //-->
+  <section class="kode-pagesection">
+    <div class="container">
+      <div class="row">
+        <form [formGroup]="articleForm" (ngSubmit)="onSubmit()" class="kode-loginform">
+          <p>
+            <span>Titre</span>
+            <input formControlName="title" type="text">
+            <span *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">Titre est obligatoire</div>
+              </span>
+          </p>
+
+          <p>
+            <span>Résumé</span>
+            <textarea formControlName="summary" [rows]="4"></textarea>
+            <span *ngIf="submitted && f.summary.errors" class="invalid-feedback">
+                <div *ngIf="f.summary.errors.required">Résumé est obligatoire</div>
+              </span>
+          </p>
+
+          <p>
+            <span>Image</span>
+            <input type="file" accept="image/*" (change)="onImageChange($event)">
+            <span *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                <div *ngIf="f.image.errors.required">Image est obligatoire</div>
+            </span>
+          </p>
+
+          <p>
+            <span>Contenu</span>
+            <ckeditor formControlName="content" [config]="config" [editor]="Editor"></ckeditor>
+            <span *ngIf="submitted && f.content.errors" class="invalid-feedback">
+                <div *ngIf="f.content.errors.required">Contenu est obligatoire</div>
+            </span>
+          </p>
+          <p class="kode-submit">
+            <input class="thbg-colortwo" type="submit" value="Sauvegarder et prévisualiser">
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+</div>

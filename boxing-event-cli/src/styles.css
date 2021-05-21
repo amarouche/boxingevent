@@ -1,0 +1,90 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import "assets/css/fonts.css";
+@import "assets/css/themetypo.css";
+@import "assets/css/style.css";
+@import "assets/css/widget.css";
+/*@import "assets/css/color.css";*/
+@import "assets/css/flexslider.css";
+@import "assets/css/owl.carousel.css";
+@import "assets/css/jquery.bxslider.css";
+@import "assets/css/prettyphoto.css";
+@import "assets/css/responsive.css";
+@import "assets/css/omkbcolor.css";
+@media (min-width: 1200px) {
+  .container {
+    width: 1200px;
+  }
+}
+
+.modal-dialog-sign-up {
+  width: 968px;
+}
+
+.modal-dialog {
+  padding-top: 100px;
+}
+
+.toast-relative-position {
+  position: relative;
+}
+
+.form-toast {
+  position: relative;
+  overflow: hidden;
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  border-radius: 3px 3px 3px 3px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  box-shadow: 0 0 12px #999999;
+  color: #FFFFFF;
+}
+
+.header-8 {
+  padding: 8px;
+}
+
+.ck-editor__editable {
+  min-height: 500px;
+}
+
+.kode-loginform p textarea {
+  float: left;
+  width: 100%;
+  border: 1px solid #e2e2e2;
+  height: unset;
+}
+
+.input-submit {
+  float: right;
+  padding: 5px 30px;
+  color: #000;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 0px 1px #000 inset;
+  border: 7px solid;
+  font-weight: bold;
+  border-color: #5d5a7f;
+}
+
+.edit-submit {
+  float: left;
+  padding: 5px 30px;
+  color: #ffffff;
+  text-transform: uppercase;
+  box-shadow: 0px 0px 0px 1px #000 inset;
+  border: 7px solid;
+  font-weight: bold;
+  border-color: #5d5a7f;
+}
+
+.edit-submit:hover {
+  color: #ffffff;
+}
+
+.pagination span {
+  background-color: #5d5a7f;
+}
+
